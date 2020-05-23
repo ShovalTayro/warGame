@@ -7,5 +7,5 @@ class SniperCommander: public Soldier
     public:
     SniperCommander(int p, int h=120, int d=100): Soldier(h,d,p){}
 
-    void attack(std::vector<std::vector<Soldier*>> s, std::pair<int,int> dest);
+    void attack(std::vector<std::vector<Soldier*>> board, std::pair<int,int> source);
 };

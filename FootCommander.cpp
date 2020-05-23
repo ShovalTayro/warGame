@@ -4,4 +4,4 @@
 #include <stdexcept>
  
 using namespace std;
-void FootCommander::attack(vector<vector<Soldier*>> s, pair<int,int> dest){}
+void FootCommander::attack(vector<vector<Soldier*>> board, pair<int,int> source){}
