@@ -33,5 +33,7 @@ class Soldier{
         return maxHealth;
     }
 
-    virtual void attack(std::vector<std::vector<Soldier*>> board, std::pair<int,int> source) = 0;
+    virtual void attack(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> source) = 0;
+
+    virtual ~Soldier(){};
 };

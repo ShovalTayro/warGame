@@ -4,7 +4,7 @@
 #include <stdexcept>
  
 using namespace std;
-void Sniper::attack(vector<vector<Soldier*>> board, pair<int,int> source){
+void Sniper::attack(vector<vector<Soldier*>> &board, pair<int,int> source){
     Soldier* attacking = board[source.first][source.second];
     Soldier* target = nullptr;
     int maxLife = 0;
@@ -17,6 +17,7 @@ void Sniper::attack(vector<vector<Soldier*>> board, pair<int,int> source){
                 //we search the soldier with the max life
                 if(maxLife <= board[i][j]->getHealth()){
                     target = board[i][j];
+                    maxLife = board[i][j]->getHealth();
                     row = i;
                     col = j;
                 }
@@ -24,7 +25,6 @@ void Sniper::attack(vector<vector<Soldier*>> board, pair<int,int> source){
         }
     }
     if(target != nullptr){
-        //not sure how to remove a soldier
         if(target->getHealth() - attacking->getDamage() <= 0 ){
             target = nullptr;
             board[row][col] = nullptr;

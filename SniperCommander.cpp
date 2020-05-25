@@ -5,7 +5,7 @@
 #include <stdexcept>
  
 using namespace std;
-void SniperCommander::attack(vector<vector<Soldier*>> board, pair<int,int> source){
+void SniperCommander::attack(vector<vector<Soldier*>> &board, pair<int,int> source){
     Soldier* attacking = board[source.first][source.second];
     Soldier* target = nullptr;
     int maxLife = 0;
@@ -18,6 +18,7 @@ void SniperCommander::attack(vector<vector<Soldier*>> board, pair<int,int> sourc
                 //we search the soldier with the max life
                 if(maxLife <= board[i][j]->getHealth()){
                     target = board[i][j];
+                    maxLife = board[i][j]->getHealth();
                     row = i;
                     col = j;
                 }

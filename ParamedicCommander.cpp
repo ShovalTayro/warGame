@@ -5,7 +5,7 @@
 #include <stdexcept>
  
 using namespace std;
-void ParamedicCommander::attack(vector<vector<Soldier*>> board, pair<int,int> source){
+void ParamedicCommander::attack(vector<vector<Soldier*>> &board, pair<int,int> source){
     int a = source.first;
     int b = source.second;
 
