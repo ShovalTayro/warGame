@@ -23,6 +23,9 @@ namespace WarGame{
    }
    
    void Board::move(uint player_number, pair<int,int> source, MoveDIR direction){
+       //check if the dest is on the board
+       if(source.first < 0 || source.first > board.size()-1 || source.second < 0 || source.second > board[0].size()-1)
+       throw out_of_range("The source is out of range");
        Soldier* temp = (*this)[source];
        if((temp) == nullptr) throw invalid_argument("There is no soldier in this location");
        if((temp)->getPlayerNum() != player_number) throw invalid_argument("This soldier belongs to the other player");
